@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            line-height: 1.4;
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
@@ -120,7 +120,7 @@
         }
 
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .section-title {
@@ -145,7 +145,7 @@
 
         .profile-text {
             font-size: 1.1em;
-            line-height: 1.8;
+            line-height: 1.6;
             color: #555;
             text-align: justify;
         }
@@ -158,8 +158,8 @@
         }
 
         .experience-item, .education-item, .project-item {
-            margin-bottom: 30px;
-            padding: 20px;
+            margin-bottom: 20px;
+            padding: 15px;
             background: #f8f9fa;
             border-radius: 10px;
             border-left: 4px solid #3498db;
@@ -184,6 +184,17 @@
             margin-bottom: 5px;
         }
 
+        .company a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .company a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
         .date {
             font-size: 0.9em;
             color: #7f8c8d;
@@ -192,7 +203,7 @@
 
         .description {
             color: #555;
-            line-height: 1.6;
+            line-height: 1.4;
         }
 
         .description ul {
@@ -280,8 +291,8 @@
         }
 
         .social-links {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 10px;
             margin-top: 15px;
         }
@@ -289,11 +300,18 @@
         .social-link {
             background: #3498db;
             color: white;
-            padding: 8px 15px;
+            padding: 12px 15px;
             border-radius: 5px;
             text-decoration: none;
             font-size: 0.9em;
             transition: background 0.3s ease;
+            text-align: center;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            box-sizing: border-box;
         }
 
         .social-link:hover {
@@ -364,7 +382,9 @@
         <div class="resume-card">
             <div class="header">
                 <div class="header-content">
-                    <div class="profile-image">👨‍💻</div>
+                    <div class="profile-image">
+                        <img src="images/photo.jpg" alt="Umair Ali Khan" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    </div>
                     <h1 class="name">Umair Ali Khan</h1>
                     <p class="title">Senior Researcher & AI Consultant</p>
                     <div class="contact-info">
@@ -379,7 +399,7 @@
                 <div class="section">
                     <h2 class="section-title">Profile</h2>
                     <p class="profile-text">
-                        I am a researcher and academician with a Ph.D. in Information Technology. I have worked in various academic and research roles across Austria, Germany, and Pakistan. Currently, I work as a Senior Researcher at Haaga-Helia University of Applied Sciences in Helsinki, Finland, where my research focuses on applied AI, machine learning, natural language processing, and generative AI. I also work as an AI advisor in the Finnish AI Region (FAIR) project to assist companies in AI adoption.
+                        I am a researcher and academician with a Ph.D. in Information Technology. I have worked in various academic and research roles across Austria, Germany, and Pakistan. Currently, I work as a Senior Researcher at <a href="https://www.haaga-helia.fi/fi" target="_blank" style="color: #3498db; text-decoration: none;">Haaga-Helia University of Applied Sciences</a> in Helsinki, Finland, where my research focuses on applied AI, machine learning, natural language processing, and generative AI. I also work as an AI advisor in the <a href="https://www.fairedih.fi/" target="_blank" style="color: #3498db; text-decoration: none;">Finnish AI Region (FAIR)</a> project to assist companies in AI adoption.
                     </p>
                 </div>
 
@@ -390,7 +410,7 @@
                             
                             <div class="experience-item">
                                 <div class="job-title">Senior Researcher</div>
-                                <div class="company">Haaga-Helia University of Applied Sciences</div>
+                                <div class="company"><a href="https://www.haaga-helia.fi/fi" target="_blank">Haaga-Helia University of Applied Sciences</a></div>
                                 <div class="date">08/2022 – Present | Helsinki, Finland</div>
                                 <div class="description">
                                     <ul>
@@ -404,19 +424,19 @@
 
                             <div class="experience-item">
                                 <div class="job-title">Professor</div>
-                                <div class="company">QUEST University</div>
+                                <div class="company"><a href="https://quest.edu.pk/" target="_blank">QUEST University</a></div>
                                 <div class="date">01/2022 – 08/2022 | Pakistan</div>
                             </div>
 
                             <div class="experience-item">
                                 <div class="job-title">Associate Professor</div>
-                                <div class="company">QUEST University</div>
+                                <div class="company"><a href="https://quest.edu.pk/" target="_blank">QUEST University</a></div>
                                 <div class="date">11/2015 – 01/2022 | Pakistan</div>
                             </div>
 
                             <div class="experience-item">
                                 <div class="job-title">Research Scientist</div>
-                                <div class="company">Fraunhofer Institute for Integrated Circuits & Machine Perception Research Laboratory</div>
+                                <div class="company"><a href="https://www.iis.fraunhofer.de/en.html" target="_blank">Fraunhofer Institute for Integrated Circuits & Machine Perception Research Laboratory</a></div>
                                 <div class="date">11/2016 – 09/2017 | Germany & Hungary</div>
                             </div>
                         </div>
@@ -426,21 +446,21 @@
                             
                             <div class="education-item">
                                 <div class="job-title">Ph.D. in Information Technology</div>
-                                <div class="company">Alpen-Adria University, Klagenfurt, Austria</div>
+                                <div class="company"><a href="https://www.aau.at/en/" target="_blank">Alpen-Adria University, Klagenfurt, Austria</a></div>
                                 <div class="date">2013</div>
                                 <div class="description">Focus: Machine learning, embedded systems, dynamic energy management</div>
                             </div>
 
                             <div class="education-item">
                                 <div class="job-title">Master in Information Technology</div>
-                                <div class="company">Alpen-Adria University, Klagenfurt, Austria</div>
+                                <div class="company"><a href="https://www.aau.at/en/" target="_blank">Alpen-Adria University, Klagenfurt, Austria</a></div>
                                 <div class="date">2010</div>
                                 <div class="description">Focus: Machine learning, optimization</div>
                             </div>
 
                             <div class="education-item">
                                 <div class="job-title">Bachelor in Computer Systems Engineering</div>
-                                <div class="company">Quaid-e-Awam University of Engineering, Science & Technology (QUEST)</div>
+                                <div class="company"><a href="https://quest.edu.pk/" target="_blank">Quaid-e-Awam University of Engineering, Science & Technology (QUEST)</a></div>
                                 <div class="date">2004</div>
                                 <div class="description">Focus: Programming, database design, embedded systems</div>
                             </div>
@@ -485,10 +505,11 @@
                                 <p><strong>Languages:</strong> English (fluent), Urdu (native)</p>
                                 
                                 <div class="social-links">
-                                    <a href="#" class="social-link">LinkedIn</a>
-                                    <a href="#" class="social-link">GitHub</a>
-                                    <a href="#" class="social-link">Medium</a>
-                                    <a href="#" class="social-link">ORCID</a>
+                                    <a href="https://www.linkedin.com/in/uakhan80" class="social-link" target="_blank">🔗 LinkedIn</a>
+                                    <a href="https://github.com/umairalipathan1980" class="social-link" target="_blank">⚡ GitHub</a>
+                                    <a href="https://medium.com/@umairali.khan" class="social-link" target="_blank">📝 Medium</a>
+                                    <a href="https://orcid.org/0000-0002-2034-1211" class="social-link" target="_blank">🆔 ORCID</a>
+                                    <a href="https://web.facebook.com/umair.a.khan.90" class="social-link" target="_blank">👤 Facebook</a>
                                 </div>
                             </div>
                         </div>
@@ -561,28 +582,10 @@
                     
                     <div class="project-item">
                         <div class="job-title">FAIR: Finnish AI Region</div>
-                        <div class="company">Role: AI consultant and researcher</div>
+                        <div class="company">Role: AI consultant, researcher, AI developer</div>
                         <div class="date">Funding: European Commission, Business Finland, The City of Helsinki Innovation Fund</div>
                         <div class="description">
-                            Providing consultancy to AI startups, contributing to AI research and development in Finland, and creating innovative applications and best practices across various sectors.
-                        </div>
-                    </div>
-
-                    <div class="project-item">
-                        <div class="job-title">UPBEAT</div>
-                        <div class="company">Role: Senior researcher</div>
-                        <div class="date">Funding: Interreg Central Baltic</div>
-                        <div class="description">
-                            Upskilling migrants for entrepreneurship and business skills using AI.
-                        </div>
-                    </div>
-
-                    <div class="project-item">
-                        <div class="job-title">AI Driver – Digital Business Transformations</div>
-                        <div class="company">Role: Senior researcher</div>
-                        <div class="date">Funding: Ministry of Education and Culture, Finland</div>
-                        <div class="description">
-                            Assisting businesses in adopting AI-driven solutions for digital transformation, improving efficiency and competitiveness, research on innovative AI solutions.
+                            Providing technical AI consultancy to companies, Designing AI roadmaps, developing proof of concepts, helping in securing funding.
                         </div>
                     </div>
 
@@ -591,7 +594,25 @@
                         <div class="company">Role: Senior researcher</div>
                         <div class="date">Funding: ERDF, Finland</div>
                         <div class="description">
-                            Developing precise knowledge management and access methods for business.
+                            Developing a GenAI based knowledge management toolkit for businesses.
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="job-title">METACOG</div>
+                        <div class="company">Role: Senior researcher</div>
+                        <div class="date">Funding: European Union (Erasmus+)</div>
+                        <div class="description">
+                            AI literacy programme for managing disinformation in European societies
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="job-title">ALFA Labs</div>
+                        <div class="company">Role: Senior researcher</div>
+                        <div class="date">Funding: European Union (Erasmus+)</div>
+                        <div class="description">
+                            Advancing digital education and AI integration in higher education.
                         </div>
                     </div>
 
@@ -642,6 +663,7 @@
                             <li>Supervising Master and Ph.D. theses</li>
                             <li>Professional article writing on AI applications and adoption</li>
                             <li>Regular reviewer of various peer-reviewed academic journals and conferences</li>
+                            <li>Providing AI consultancy to other teams in Haaga-Helia and other organizations and analyzing AI adoption trends in various domains</li>
                         </ul>
                     </div>
                 </div>
