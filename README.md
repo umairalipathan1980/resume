@@ -2,20 +2,24 @@
 
 Professional resume website for Umair Ali Khan - Senior Researcher & AI Consultant
 
-🎯 **Overview**
+🎯 **Overview**  
+
 This repository hosts my professional resume as a responsive web application. The website showcases my academic and research experience in artificial intelligence, machine learning, and related technologies.
-👨‍💻 **About Me**
+👨‍💻 **About Me**  
+
 Umair Ali Khan
 Senior Researcher & AI Consultant
-Haaga-Helia University of Applied Sciences, Helsinki, Finland
+Haaga-Helia University of Applied Sciences, Helsinki, Finland  
 
 🎓 Ph.D. in Information Technology
 🔬 Research focus: Applied AI, Machine Learning, NLP, Generative AI
 🌍 International experience across Austria, Germany, Pakistan, and Finland
 📊 AI Consultant for Finnish AI Region (FAIR) project
 
-🌐 **Live Website**
+🌐 **Live Website**  
+
 Visit my resume at: [GitHub Pages URL will be here]
 
-Contact: umairali.khan@haagahelia.fi
+Contact: umairali.khan@haagahelia.fi  
+
 Location: Helsinki, Finland
