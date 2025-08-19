@@ -24,6 +24,6 @@ Haaga-Helia University of Applied Sciences, Helsinki, Finland
 
 Visit my resume at: [[My Resume]](https://umairalipathan1980.github.io/resume/#)
 
-Contact: umairali.khan@haagahelia.fi  
+Contact: umairali.khan@haaga-helia.fi  
 
 Location: Helsinki, Finland
