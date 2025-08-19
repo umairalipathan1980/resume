@@ -1,10 +1,6 @@
 📄 **Personal Resume Website**
 
-Professional resume website for Umair Ali Khan - Senior Researcher & AI Consultant
-
-🎯 **Overview**  
-
-This repository hosts my professional resume as a responsive web application. The website shows my academic and research experience in artificial intelligence, machine learning, and related technologies.  
+Resume website for Umair Ali Khan - Senior Researcher & AI Consultant
 
 👨‍💻 **About Me**  
 
