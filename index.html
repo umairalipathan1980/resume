@@ -94,13 +94,13 @@
             color: #f4f8fb;
             font-size: 1.03rem;
         }
-        .contact-row, .link-row {
+        .link-row {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-top: 12px;
+            margin-top: 16px;
         }
-        .contact-chip, .action-link {
+        .action-link {
             min-height: 36px;
             display: inline-flex;
             align-items: center;
@@ -108,12 +108,29 @@
             font-size: 0.92rem;
             white-space: nowrap;
         }
-        .contact-chip {
-            padding: 7px 12px;
-            color: #ecf6fa;
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.22);
+        .contact-line {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px 0;
+            margin-top: 16px;
+            color: #d3e6f0;
+            font-size: 0.96rem;
         }
+        .contact-line > * + * {
+            margin-left: 14px;
+            padding-left: 14px;
+            border-left: 1px solid rgba(255, 255, 255, 0.28);
+        }
+        .contact-line > * { display: inline-flex; align-items: center; gap: 7px; }
+        .contact-line svg { width: 15px; height: 15px; flex: none; opacity: 0.85; }
+        .contact-line a {
+            color: #ffffff;
+            text-decoration: underline;
+            text-decoration-color: rgba(255, 255, 255, 0.55);
+            text-underline-offset: 3px;
+        }
+        .contact-line a:hover { text-decoration-color: #ffffff; }
         .action-link {
             padding: 8px 13px;
             color: #ffffff;
@@ -307,17 +324,21 @@
         }
         @media (max-width: 620px) {
             .hero, .main { padding-left: 18px; padding-right: 18px; }
-            .contact-chip, .action-link { width: 100%; justify-content: center; white-space: normal; text-align: center; }
+            .action-link { width: 100%; justify-content: center; white-space: normal; text-align: center; }
+            .contact-line { flex-direction: column; align-items: flex-start; gap: 4px 0; }
+            .contact-line > * + * { margin-left: 0; padding-left: 0; border-left: 0; }
             .role-top, .compact-top { flex-direction: column; gap: 4px; }
             .role-meta, .date { white-space: normal; }
-            .expertise-row, .info-row { grid-template-columns: 1fr; gap: 5px; }
+            .info-row { grid-template-columns: 1fr; gap: 5px; }
         }
         @media print {
             body { background: #ffffff; }
             .page { margin: 0; box-shadow: none; }
             .hero { color: var(--ink); background: #ffffff; border-bottom: 2px solid var(--line); }
-            .eyebrow, .role-line, .value-prop, .contact-chip, .action-link { color: var(--ink); }
-            .contact-chip, .action-link { border-color: var(--line); background: #ffffff; }
+            .eyebrow, .role-line, .value-prop, .contact-line, .action-link { color: var(--ink); }
+            .contact-line a { color: var(--ink); }
+            .contact-line > * + * { border-left-color: var(--line); }
+            .action-link { border-color: var(--line); background: #ffffff; }
             .section, .role-card, .project-card, .publication-item, .education-card { break-inside: avoid; }
         }
     </style>
@@ -333,11 +354,11 @@
                 <h1>Umair Ali Khan, Ph.D.</h1>
                 <p class="role-line">Senior AI Researcher & AI Consultant</p>
                 <p class="value-prop">Helping organizations turn AI research into production-ready business value through strategy, responsible adoption, proof-of-concepts, and applied research.</p>
-                <div class="contact-row" aria-label="Contact information">
-                    <span class="contact-chip">Helsinki, Finland</span>
-                    <a class="contact-chip" href="mailto:umairali.khan@haaga-helia.fi">umairali.khan@haaga-helia.fi</a>
-                    <a class="contact-chip" href="tel:+358503422685">+358 503422685</a>
-                    <span class="contact-chip">Haaga-Helia University of Applied Sciences</span>
+                <div class="contact-line" aria-label="Contact information">
+                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Helsinki, Finland</span>
+                    <a href="mailto:umairali.khan@haaga-helia.fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>umairali.khan@haaga-helia.fi</a>
+                    <a href="tel:+358503422685"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+358 503422685</a>
+                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.5 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg><a href="https://www.haaga-helia.fi/en" target="_blank" rel="noopener">Haaga-Helia University</a></span>
                 </div>
                 <nav class="link-row" aria-label="Professional links">
                     <a href="mailto:umairali.khan@haaga-helia.fi?subject=AI%20Consultancy%20Appointment%20Request" class="action-link primary">Book AI Consultancy</a>
