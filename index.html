@@ -237,12 +237,38 @@
         .funding { display: block; margin: 6px 0 8px; color: #6f4e18; font-size: 0.88rem; font-weight: 650; }
         .two-column { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 20px; }
         .education-stack, .info-grid { display: grid; gap: 12px; }
-        .publication-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+        .publication-list { display: grid; gap: 8px; counter-reset: pub; }
         .education-card { padding: 16px; border-left: 4px solid var(--teal); }
-        .publication-item { padding: 10px 14px; }
-        .publication-title { color: #2d3f4f; font-size: 0.9rem; line-height: 1.4; }
+        .publication-item {
+            position: relative;
+            padding: 12px 16px 12px 46px;
+            border-left: 3px solid var(--blue);
+        }
+        .publication-item::before {
+            counter-increment: pub;
+            content: counter(pub);
+            position: absolute;
+            left: 13px;
+            top: 12px;
+            width: 22px;
+            height: 22px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--navy);
+            color: #ffffff;
+            font-size: 0.76rem;
+            font-weight: 700;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .publication-title { color: #354553; font-size: 0.92rem; line-height: 1.45; }
+        .publication-title a { color: var(--navy); font-weight: 600; }
+        .publication-title a:hover { color: var(--blue); }
         .publication-title strong { color: var(--navy); }
-        .publication-venue { margin-top: 3px; font-size: 0.86rem; }
+        .publication-venue { margin-top: 4px; font-size: 0.85rem; font-style: italic; }
+        .publication-venue .doi { font-style: normal; }
         .info-row { display: grid; grid-template-columns: 145px minmax(0, 1fr); gap: 14px; padding: 14px 16px; background: #fbfcfd; }
         .info-label { color: var(--navy); font-weight: 700; }
         .pub-more { margin-top: 14px; font-size: 0.94rem; font-weight: 600; }
@@ -418,12 +444,30 @@
             <section class="section">
                 <div class="section-heading"><h2>Selected Publications</h2></div>
                 <div class="publication-list">
-                    <div class="publication-item"><p class="publication-title">Kudryavtsev, D.; <strong>Khan, U.A.</strong>; Remes, J.; Kauttonen, J. (2026). "From Collaboration to Toolkit: Applying eDSR in a Generative AI Knowledge Management Project"</p><p class="publication-venue">DESRIST 2026, Lecture Notes in Computer Science, Springer.</p></div>
-                    <div class="publication-item"><p class="publication-title">Alamaki, A.; <strong>Khan, U.A.</strong>; Lagstedt, A. (2025). "Ethical Considerations in the AI Lifecycle for Design, Developing and Adopting AI in Public Sector - the Case of Finland"</p><p class="publication-venue">International Journal of Information Systems and Project Management, 13(4).</p></div>
-                    <div class="publication-item"><p class="publication-title"><strong>Khan, U.A.</strong>; Kudryavtsev, D.; Kauttonen, J. (2025). "AI Adoption in Finnish SMEs: Key Findings from AI Consultancy at a European Digital Innovation Hub"</p><p class="publication-venue">IEEE SAMI 2025, Slovakia.</p></div>
-                    <div class="publication-item"><p class="publication-title">Alamaki, A.; <strong>Khan, U.A.</strong>; et al. (2024). "An Experiment of AI-Based Assessment: Perspectives of Learning Preferences, Benefits, Intention, Technology Affinity, and Trust"</p><p class="publication-venue">Education Sciences, 14(12), 1386.</p></div>
-                    <div class="publication-item"><p class="publication-title"><strong>Khan, U.A.</strong>; et al. (2024). "Exploring Contactless Techniques in Multimodal Emotion Recognition"</p><p class="publication-venue">Multimedia Systems, 30.</p></div>
-                    <div class="publication-item"><p class="publication-title"><strong>Khan, U.A.</strong>; et al. (2020). "Movies Tags Prediction & Segmentation Using Deep Learning"</p><p class="publication-venue">IEEE Access, 8(1).</p></div>
+                    <div class="publication-item">
+                        <p class="publication-title">Kudryavtsev, D.; <strong>Khan, U.A.</strong>; Remes, J.; Kauttonen, J. (2026). <a href="https://link.springer.com/chapter/10.1007/978-3-032-28570-6_23" target="_blank" rel="noopener">From Collaboration to Toolkit: Applying eDSR in a Generative AI Knowledge Management Project</a>.</p>
+                        <p class="publication-venue">Design Science Research (DESRIST 2026), Lecture Notes in Computer Science, Springer. <span class="doi">DOI: 10.1007/978-3-032-28570-6_23</span></p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="publication-title">Alamäki, A.; <strong>Khan, U.A.</strong>; Lagstedt, A. (2025). <a href="https://aisel.aisnet.org/ijispm/vol13/iss4/2/" target="_blank" rel="noopener">Ethical Considerations in the AI Lifecycle for Design, Developing and Adopting AI in Public Sector – the Case of Finland</a>.</p>
+                        <p class="publication-venue">International Journal of Information Systems and Project Management, 13(4), Article 2. <span class="doi">DOI: 10.12821/ijispm130401</span></p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="publication-title"><strong>Khan, U.A.</strong>; Kudryavtsev, D.; Kauttonen, J. (2025). <a href="https://ieeexplore.ieee.org/document/10883271/" target="_blank" rel="noopener">AI Adoption in Finnish SMEs: Key Findings from AI Consultancy at a European Digital Innovation Hub</a>.</p>
+                        <p class="publication-venue">Proc. IEEE 23rd World Symposium on Applied Machine Intelligence and Informatics (SAMI 2025), Stará Lesná, Slovakia, pp. 465–470. <span class="doi">DOI: 10.1109/SAMI63904.2025.10883271</span></p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="publication-title">Alamäki, A.; <strong>Khan, U.A.</strong>; Kauttonen, J.; Schlögl, S. (2024). <a href="https://www.mdpi.com/2227-7102/14/12/1386" target="_blank" rel="noopener">An Experiment of AI-Based Assessment: Perspectives of Learning Preferences, Benefits, Intention, Technology Affinity, and Trust</a>.</p>
+                        <p class="publication-venue">Education Sciences, 14(12), Article 1386. <span class="doi">DOI: 10.3390/educsci14121386</span></p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="publication-title"><strong>Khan, U.A.</strong>; Xu, Q.; Liu, Y.; Lagstedt, A.; Alamäki, A.; Kauttonen, J. (2024). <a href="https://link.springer.com/article/10.1007/s00530-024-01302-2" target="_blank" rel="noopener">Exploring Contactless Techniques in Multimodal Emotion Recognition: Insights into Diverse Applications, Challenges, Solutions, and Prospects</a>.</p>
+                        <p class="publication-venue">Multimedia Systems, 30(3), Article 115. <span class="doi">DOI: 10.1007/s00530-024-01302-2</span></p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="publication-title"><strong>Khan, U.A.</strong>; Martínez-del-Amor, M.Á.; Altowaijri, S.M.; Ahmed, A.; Ur Rahman, A.; Us Sama, N.; Haseeb, K.; Islam, N. (2020). <a href="https://ieeexplore.ieee.org/document/8947961/" target="_blank" rel="noopener">Movie Tags Prediction and Segmentation Using Deep Learning</a>.</p>
+                        <p class="publication-venue">IEEE Access, 8, 6071–6086. <span class="doi">DOI: 10.1109/ACCESS.2019.2963535</span></p>
+                    </div>
                 </div>
                 <p class="pub-more"><a href="https://orcid.org/0000-0002-8560-764X" target="_blank" rel="noopener">View other publications on ORCID &rarr;</a></p>
             </section>
