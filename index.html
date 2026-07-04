@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Umair Ali Khan, Ph.D. - Senior AI Researcher & AI Advisor</title>
+    <meta name="description" content="Umair Ali Khan, Ph.D. — Senior AI Researcher & AI Advisor in Helsinki, Finland. LLMs, AI agents, applied machine learning, and enterprise AI adoption.">
+    <meta name="author" content="Umair Ali Khan">
+    <meta property="og:title" content="Umair Ali Khan, Ph.D. — Senior AI Researcher & AI Advisor">
+    <meta property="og:description" content="Helping organizations turn AI research into production-ready business value.">
+    <meta property="og:type" content="profile">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%2312324a'/%3E%3Ctext%20x='50%25'%20y='50%25'%20dy='.35em'%20text-anchor='middle'%20font-family='Segoe%20UI,Arial,sans-serif'%20font-size='30'%20font-weight='700'%20fill='%23ffffff'%3EUK%3C/text%3E%3C/svg%3E">
     <style>
         :root {
             --ink: #1f2933;
@@ -49,9 +55,10 @@
         .photo-wrap {
             width: 168px;
             height: 168px;
-            border-radius: 18px;
+            border-radius: 50%;
             overflow: hidden;
-            border: 3px solid rgba(255, 255, 255, 0.65);
+            border: 4px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
             background: rgba(255, 255, 255, 0.14);
         }
         .photo-wrap img {
@@ -129,13 +136,31 @@
         .impact-number {
             display: block;
             color: var(--navy);
-            font-size: 1.55rem;
-            line-height: 1.1;
-            font-weight: 760;
+            font-size: 1.9rem;
+            line-height: 1.05;
+            font-weight: 780;
         }
-        .impact-label { display: block; margin-top: 5px; color: var(--muted); font-size: 0.88rem; }
+        .impact-unit {
+            display: inline-block;
+            margin-left: 2px;
+            color: var(--blue);
+            font-size: 0.98rem;
+            font-weight: 650;
+            vertical-align: middle;
+        }
+        .impact-label { display: block; margin-top: 7px; color: var(--muted); font-size: 0.88rem; }
         .section { margin-bottom: 34px; }
-        .section-heading { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+        .section-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .section-heading::before {
+            content: "";
+            width: 24px;
+            height: 4px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, var(--blue), var(--teal));
+            flex: none;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
         .section-heading::after { content: ""; height: 1px; flex: 1; background: var(--line); }
         h2 {
             margin: 0;
@@ -216,6 +241,7 @@
         .publication-venue { margin-top: 5px; }
         .info-row { display: grid; grid-template-columns: 145px minmax(0, 1fr); gap: 14px; padding: 14px 16px; background: #fbfcfd; }
         .info-label { color: var(--navy); font-weight: 700; }
+        .pub-more { margin-top: 14px; font-size: 0.94rem; font-weight: 600; }
         .footer-note { margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
         @media (max-width: 900px) {
             .page { margin: 0; }
@@ -266,17 +292,17 @@
                     <button type="button" class="action-link print-action" onclick="window.print()">Save as PDF</button>
                     <a href="http://www.linkedin.com/in/uakhan80" class="action-link" target="_blank" rel="noopener">LinkedIn</a>
                     <a href="https://github.com/umairalipathan1980" class="action-link" target="_blank" rel="noopener">GitHub</a>
-                    <a href="https://orcid.org/my-orcid?orcid=0000-0002-8560-764X" class="action-link" target="_blank" rel="noopener">ORCID</a>
+                    <a href="https://orcid.org/0000-0002-8560-764X" class="action-link" target="_blank" rel="noopener">ORCID</a>
                     <a href="https://medium.com/@umairali.khan" class="action-link" target="_blank" rel="noopener">Medium</a>
                 </nav>
             </div>
         </header>
         <main class="main">
             <section class="impact-strip" aria-label="Career highlights">
-                <div class="impact-item"><span class="impact-number">20+ years</span><span class="impact-label">Academic and industry experience across Europe and Asia</span></div>
-                <div class="impact-item"><span class="impact-number">100+ companies</span><span class="impact-label">Advised on AI adoption, use cases, and implementation paths</span></div>
-                <div class="impact-item"><span class="impact-number">EU-funded</span><span class="impact-label">Active contributor to regional and international AI initiatives</span></div>
-                <div class="impact-item"><span class="impact-number">Peer-reviewed</span><span class="impact-label">Research in applied AI, education, NLP, and knowledge systems</span></div>
+                <div class="impact-item"><span class="impact-number">20+ <span class="impact-unit">years</span></span><span class="impact-label">Academic and industry experience across Europe and Asia</span></div>
+                <div class="impact-item"><span class="impact-number">100+ <span class="impact-unit">companies</span></span><span class="impact-label">Advised on AI adoption, use cases, and implementation paths</span></div>
+                <div class="impact-item"><span class="impact-number">10+ <span class="impact-unit">projects</span></span><span class="impact-label">EU, regional, and international AI initiatives delivered</span></div>
+                <div class="impact-item"><span class="impact-number">50+ <span class="impact-unit">publications</span></span><span class="impact-label">Peer-reviewed research in applied AI, NLP, and knowledge systems</span></div>
             </section>
             <section class="section">
                 <div class="section-heading"><h2>Executive Summary</h2></div>
@@ -320,11 +346,11 @@
                         <div class="role-meta">Aug 2022 - Present | Helsinki, Finland</div>
                     </div>
                     <ul class="clean-list">
-                        <li>Advised hundreds of companies on AI use case selection, business value assessment, implementation planning, and responsible AI adoption.</li>
-                        <li>Conduct AI needs analyses and maturity assessments to evaluate organizational readiness for AI initiatives.</li>
-                        <li>Develop AI adoption roadmaps covering capability building, technology selection, governance, and implementation priorities.</li>
-                        <li>Provide technical guidance on AI/ML models, data strategy, generative AI, RAG systems, AI agents, and regulatory considerations.</li>
-                        <li>Build proof-of-concepts and MVP-grade AI/ML solutions that help companies validate ideas and support investment decisions.</li>
+                        <li>Advised 100+ companies on AI use case selection and business value assessment, helping them prioritize high-return initiatives and de-risk adoption decisions.</li>
+                        <li>Ran AI needs analyses and maturity assessments that translated organizational readiness into concrete, actionable next steps.</li>
+                        <li>Delivered AI adoption roadmaps spanning capability building, technology selection, governance, and implementation priorities.</li>
+                        <li>Guided technical teams on AI/ML models, data strategy, generative AI, RAG systems, AI agents, and regulatory considerations.</li>
+                        <li>Built proof-of-concepts and MVP-grade AI/ML solutions that enabled companies to validate ideas and justify investment decisions.</li>
                     </ul>
                 </div>
             </section>
@@ -390,16 +416,12 @@
                 <div class="publication-list">
                     <div class="publication-item"><p class="publication-title">Kudryavtsev, D.; <strong>Khan, U.A.</strong>; Remes, J.; Kauttonen, J. (2026). "From Collaboration to Toolkit: Applying eDSR in a Generative AI Knowledge Management Project"</p><p class="publication-venue">DESRIST 2026, Lecture Notes in Computer Science, Springer.</p></div>
                     <div class="publication-item"><p class="publication-title">Alamaki, A.; <strong>Khan, U.A.</strong>; Lagstedt, A. (2025). "Ethical Considerations in the AI Lifecycle for Design, Developing and Adopting AI in Public Sector - the Case of Finland"</p><p class="publication-venue">International Journal of Information Systems and Project Management, 13(4).</p></div>
-                    <div class="publication-item"><p class="publication-title"><strong>Khan, U.A.</strong>; Kudravtsev, D.; Kauttonen, J. (2025). "AI Adoption in Finnish SMEs: Key Findings from AI Consultancy at a European Digital Innovation Hub"</p><p class="publication-venue">IEEE SAMI 2025, Slovakia.</p></div>
-                    <div class="publication-item"><p class="publication-title">Kudryavtsev, D.; et al.; <strong>Khan, U.A.</strong> (2025). "Towards actionable AI implementation capability maturity assessment for SMEs"</p><p class="publication-venue">HHC 2024, Springer.</p></div>
-                    <div class="publication-item"><p class="publication-title">Kudryavtsev, D.; <strong>Khan, U.A.</strong>; Remes, J.; Kautonen, J. (2025). "Reuse and guidance for generative AI solution development and implementation: knowledge management perspective"</p><p class="publication-venue">International Conference on Enterprise Design, Operations, and Computing, Springer.</p></div>
+                    <div class="publication-item"><p class="publication-title"><strong>Khan, U.A.</strong>; Kudryavtsev, D.; Kauttonen, J. (2025). "AI Adoption in Finnish SMEs: Key Findings from AI Consultancy at a European Digital Innovation Hub"</p><p class="publication-venue">IEEE SAMI 2025, Slovakia.</p></div>
                     <div class="publication-item"><p class="publication-title">Alamaki, A.; <strong>Khan, U.A.</strong>; et al. (2024). "An Experiment of AI-Based Assessment: Perspectives of Learning Preferences, Benefits, Intention, Technology Affinity, and Trust"</p><p class="publication-venue">Education Sciences, 14(12), 1386.</p></div>
                     <div class="publication-item"><p class="publication-title"><strong>Khan, U.A.</strong>; et al. (2024). "Exploring Contactless Techniques in Multimodal Emotion Recognition"</p><p class="publication-venue">Multimedia Systems, 30.</p></div>
-                    <div class="publication-item"><p class="publication-title"><strong>Khan, U.A.</strong>; et al. (2024). "Understanding the Impact of Sisu on Workforce and Well-being: A Machine Learning-Based Analysis"</p><p class="publication-venue">Heliyon, 10(2).</p></div>
-                    <div class="publication-item"><p class="publication-title"><strong>Khan, U.A.</strong>; et al. (2024). "A System to Ensure Information Trustworthiness in AI Enhanced Higher Education"</p><p class="publication-venue">Journal of IT Education: Research, 23.</p></div>
-                    <div class="publication-item"><p class="publication-title">Kauttonen, J.; <strong>Khan, U.A.</strong>; et al. (2024). "Topic mining for theses and job ads in ICT sector: can higher education institutes respond to job market demands?"</p><p class="publication-venue">Frontiers in Education, 9, 1322774.</p></div>
                     <div class="publication-item"><p class="publication-title"><strong>Khan, U.A.</strong>; et al. (2020). "Movies Tags Prediction & Segmentation Using Deep Learning"</p><p class="publication-venue">IEEE Access, 8(1).</p></div>
                 </div>
+                <p class="pub-more"><a href="https://orcid.org/0000-0002-8560-764X" target="_blank" rel="noopener">View all 50+ publications on ORCID &rarr;</a></p>
             </section>
 
             <section class="section">
