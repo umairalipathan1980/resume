@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Umair Ali Khan, Ph.D. - Senior AI Researcher & AI Advisor</title>
-    <meta name="description" content="Umair Ali Khan, Ph.D. — Senior AI Researcher & AI Advisor in Helsinki, Finland. LLMs, AI agents, applied machine learning, and enterprise AI adoption.">
+    <title>Umair Ali Khan, Ph.D. - Senior AI Researcher & AI Consultant</title>
+    <meta name="description" content="Umair Ali Khan, Ph.D. — Senior AI Researcher & AI Consultant in Helsinki, Finland. LLMs, AI agents, applied machine learning, and enterprise AI adoption.">
     <meta name="author" content="Umair Ali Khan">
-    <meta property="og:title" content="Umair Ali Khan, Ph.D. — Senior AI Researcher & AI Advisor">
+    <meta property="og:title" content="Umair Ali Khan, Ph.D. — Senior AI Researcher & AI Consultant">
     <meta property="og:description" content="Helping organizations turn AI research into production-ready business value.">
     <meta property="og:type" content="profile">
     <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%2312324a'/%3E%3Ctext%20x='50%25'%20y='50%25'%20dy='.35em'%20text-anchor='middle'%20font-family='Segoe%20UI,Arial,sans-serif'%20font-size='30'%20font-weight='700'%20fill='%23ffffff'%3EUK%3C/text%3E%3C/svg%3E">
@@ -163,6 +163,32 @@
         p { margin: 0; }
         .summary { max-width: 940px; color: #354553; font-size: 1.02rem; }
         .summary + .summary { margin-top: 12px; }
+        .services-lead { margin-top: 16px; color: #354553; font-size: 1.02rem; font-weight: 600; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px 22px;
+            margin-top: 12px;
+        }
+        .service-item {
+            position: relative;
+            padding-left: 26px;
+            color: #425466;
+            font-size: 0.96rem;
+            line-height: 1.4;
+        }
+        .service-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+            background: linear-gradient(135deg, var(--blue), var(--teal));
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
         .strength-grid, .expertise-grid, .project-grid { display: grid; gap: 14px; }
         .strength-grid { grid-template-columns: repeat(3, 1fr); }
         .strength-card, .project-card, .education-card, .publication-item, .info-row {
@@ -178,17 +204,18 @@
             font-size: 0.94rem;
         }
         .expertise-grid { grid-template-columns: repeat(2, 1fr); }
-        .expertise-row {
-            display: grid;
-            grid-template-columns: 160px minmax(0, 1fr);
-            gap: 18px;
-            padding: 16px 0;
-            border-bottom: 1px solid var(--line);
+        .expertise-card {
+            padding: 16px;
+            border: 1px solid var(--line);
+            background: #ffffff;
+            border-radius: 8px;
+            border-top: 4px solid var(--teal);
         }
-        .expertise-row:first-child { padding-top: 0; }
-        .expertise-row:last-child { border-bottom: 0; padding-bottom: 0; }
-        .expertise-label { color: var(--navy); font-weight: 700; }
-        .expertise-value { color: var(--muted); }
+        .expertise-card:nth-child(2) { border-top-color: var(--blue); }
+        .expertise-card:nth-child(3) { border-top-color: var(--gold); }
+        .expertise-card:nth-child(4) { border-top-color: var(--green); }
+        .expertise-card h3 { margin-bottom: 7px; }
+        .expertise-card p { color: var(--muted); font-size: 0.94rem; }
         .role-card {
             padding: 20px 22px;
             border: 1px solid var(--line);
@@ -274,7 +301,7 @@
             .hero, .main { padding-left: 26px; padding-right: 26px; }
             .hero { grid-template-columns: 1fr; gap: 24px; }
             .photo-wrap { width: 138px; height: 138px; }
-            .impact-strip, .strength-grid, .expertise-grid, .project-grid, .two-column, .publication-list, .compact-list.two-col { grid-template-columns: 1fr; }
+            .impact-strip, .strength-grid, .expertise-grid, .project-grid, .two-column, .publication-list, .compact-list.two-col, .services-grid { grid-template-columns: 1fr; }
             .impact-item { border-right: 0; border-bottom: 1px solid var(--line); }
             .impact-item:last-child { border-bottom: 0; }
         }
@@ -304,7 +331,7 @@
             <div>
                 <p class="eyebrow">Applied AI, LLMs, AI Agents, Machine Learning, NLP, Computer Vision</p>
                 <h1>Umair Ali Khan, Ph.D.</h1>
-                <p class="role-line">Senior AI Researcher & AI Advisor</p>
+                <p class="role-line">Senior AI Researcher & AI Consultant</p>
                 <p class="value-prop">Helping organizations turn AI research into production-ready business value through strategy, responsible adoption, proof-of-concepts, and applied research.</p>
                 <div class="contact-row" aria-label="Contact information">
                     <span class="contact-chip">Helsinki, Finland</span>
@@ -324,14 +351,25 @@
         <main class="main">
             <section class="impact-strip" aria-label="Career highlights">
                 <div class="impact-item"><span class="impact-number">20+ <span class="impact-unit">years</span></span><span class="impact-label">Academic and industry experience across Europe and Asia</span></div>
-                <div class="impact-item"><span class="impact-number">100+ <span class="impact-unit">companies</span></span><span class="impact-label">Advised on AI adoption, use cases, and implementation paths</span></div>
-                <div class="impact-item"><span class="impact-number">10+ <span class="impact-unit">projects</span></span><span class="impact-label">EU, regional, and international AI initiatives delivered</span></div>
-                <div class="impact-item"><span class="impact-number">50+ <span class="impact-unit">publications</span></span><span class="impact-label">Peer-reviewed research in applied AI, NLP, and knowledge systems</span></div>
+                <div class="impact-item"><span class="impact-number">150+ <span class="impact-unit">companies</span></span><span class="impact-label">Helped identify high-value AI use cases, design and implement AI solutions, and de-risk adoption decisions</span></div>
+                <div class="impact-item"><span class="impact-number">10+ <span class="impact-unit">running projects</span></span><span class="impact-label">EU, regional, and international AI initiatives</span></div>
+                <div class="impact-item"><span class="impact-number">50+ <span class="impact-unit">publications</span></span><span class="impact-label">Peer-reviewed research in applied AI, NLP, computer vision, and knowledge systems</span></div>
             </section>
             <section class="section">
                 <div class="section-heading"><h2>Executive Summary</h2></div>
-                <p class="summary">Senior AI researcher and advisor with a Ph.D. in Information Technology and more than two decades of experience spanning applied AI, machine learning, NLP, generative AI, embedded systems, academia, and industry collaboration.</p>
+                <p class="summary">Senior AI researcher and consultant with a Ph.D. in Information Technology and more than two decades of experience spanning applied AI, machine learning, NLP, generative AI, embedded systems, academia, and industry collaboration.</p>
                 <p class="summary">Currently at <a href="https://www.haaga-helia.fi/en" target="_blank" rel="noopener">Haaga-Helia University of Applied Sciences</a>, advising organizations through the <a href="https://www.fairedih.fi/" target="_blank" rel="noopener">Finnish AI Region (FAIR)</a> project while leading research on LLMs, AI agents, structured knowledge extraction, and enterprise AI adoption.</p>
+                <p class="services-lead">As an AI consultant, I support organizations across the full AI adoption journey:</p>
+                <div class="services-grid">
+                    <div class="service-item">Use case identification and prioritization</div>
+                    <div class="service-item">AI readiness and maturity assessment</div>
+                    <div class="service-item">AI roadmap and strategy design</div>
+                    <div class="service-item">Technical reviews of existing AI/ML solutions</div>
+                    <div class="service-item">Proof-of-concept and MVP development</div>
+                    <div class="service-item">Responsible AI, governance, and compliance guidance</div>
+                    <div class="service-item">Research proposal development and funding support</div>
+                    <div class="service-item">Technical recommendations on AI implementation, testing, and deployment</div>
+                </div>
             </section>
 
             <section class="section">
@@ -349,32 +387,28 @@
             <section class="section">
                 <div class="section-heading"><h2>Technical Expertise</h2></div>
                 <div class="expertise-grid">
-                    <div>
-                        <div class="expertise-row"><div class="expertise-label">AI/ML</div><div class="expertise-value">Model building, fine-tuning, retraining, deployment, evaluation, testing, and optimization across NLP, image processing, and computer vision.</div></div>
-                        <div class="expertise-row"><div class="expertise-label">Generative AI</div><div class="expertise-value">LLMs, RAG, AI agents, MCP, LangChain, LlamaIndex, LangGraph, OpenAI SDK, Claude SDK.</div></div>
-                    </div>
-                    <div>
-                        <div class="expertise-row"><div class="expertise-label">Programming</div><div class="expertise-value">Python, C/C++, MATLAB, CUDA C, TensorFlow, Keras, PyTorch, scikit-learn.</div></div>
-                        <div class="expertise-row"><div class="expertise-label">Full Stack</div><div class="expertise-value">Python + FastAPI, React + Vite, REST APIs, cloud deployment, and MLOps workflows.</div></div>
-                    </div>
+                    <div class="expertise-card"><h3>AI/ML</h3><p>Model building, fine-tuning, retraining, deployment, evaluation, testing, and optimization across NLP, image processing, and computer vision.</p></div>
+                    <div class="expertise-card"><h3>Generative AI</h3><p>LLMs, RAG, AI agents, MCP, LangChain, LlamaIndex, LangGraph, OpenAI SDK, Claude SDK.</p></div>
+                    <div class="expertise-card"><h3>Programming</h3><p>Python, C/C++, MATLAB, CUDA C, TensorFlow, Keras, PyTorch, scikit-learn.</p></div>
+                    <div class="expertise-card"><h3>Full Stack</h3><p>Python + FastAPI, React + Vite, REST APIs, cloud deployment, and MLOps workflows.</p></div>
                 </div>
             </section>
             <section class="section">
-                <div class="section-heading"><h2>AI Advisory & Industry Impact</h2></div>
+                <div class="section-heading"><h2>AI Consultanty & Industry Impact</h2></div>
                 <div class="role-card advisory">
                     <div class="role-top">
                         <div>
-                            <h3>AI Advisor</h3>
+                            <h3>AI Consultant</h3>
                             <p class="organization"><a href="https://www.fairedih.fi/en/frontpage/" target="_blank" rel="noopener">Finnish AI Region (FAIR) Project</a> | Haaga-Helia University of Applied Sciences</p>
                         </div>
                         <div class="role-meta">Aug 2022 - Present | Helsinki, Finland</div>
                     </div>
                     <ul class="clean-list">
-                        <li>Advised 100+ companies on AI use case selection and business value assessment, helping them prioritize high-return initiatives and de-risk adoption decisions.</li>
-                        <li>Ran AI needs analyses and maturity assessments that translated organizational readiness into concrete, actionable next steps.</li>
-                        <li>Delivered AI adoption roadmaps spanning capability building, technology selection, governance, and implementation priorities.</li>
+                        <li>Advised 150+ companies on AI use case selection, business value assessment, successful AI implementation, prioritizing high-return initiatives, and de-risking adoption decisions.</li>
+                        <li>Conducted AI needs analyses and maturity assessments that translated organizational readiness into concrete, actionable next steps.</li>
+                        <li>Delivered AI adoption roadmaps for companies spanning capability building, technology selection, governance, and implementation priorities.</li>
                         <li>Guided technical teams on AI/ML models, data strategy, generative AI, RAG systems, AI agents, and regulatory considerations.</li>
-                        <li>Built proof-of-concepts and MVP-grade AI/ML solutions that enabled companies to validate ideas and justify investment decisions.</li>
+                        <li>Built proof-of-concepts and MVP-grade AI/ML solutions for 20+ companies that enabled companies to validate ideas and justify investment decisions.</li>
                     </ul>
                 </div>
             </section>
@@ -390,20 +424,12 @@
                         <div class="role-meta">Aug 2022 - Present</div>
                     </div>
                     <ul class="clean-list">
-                        <li>Lead research on structured knowledge extraction, analysis, and processing using large and small language models.</li>
+                        <li>Lead research on knowledge extraction, access, and generation using LLMs and AI agents.</li>
                         <li>Develop generative AI frameworks for enterprise knowledge management and industrial workflow automation.</li>
-                        <li>Design AI capability assessment models and digital transformation plans for higher education institutions.</li>
+                        <li>Design AI capability assessment models and digital transformation plans.</li>
                         <li>Secure and manage R&D projects funded by EU, regional, and international programs.</li>
                         <li>Supervise master's and undergraduate theses with industry collaboration and publish peer-reviewed research.</li>
                     </ul>
-                </div>
-
-                <div class="project-grid" style="margin-top: 16px;">
-                    <div class="project-card"><h3><a href="https://www.fairedih.fi/en/frontpage/" target="_blank" rel="noopener">FAIR: Finnish AI Region</a></h3><span class="funding">EU Commission, Business Finland, City of Helsinki Innovation Fund</span><p>Technical AI consultancy, AI roadmaps, proof-of-concepts, and funding support for companies.</p></div>
-                    <div class="project-card"><h3><a href="https://gaik.ai/" target="_blank" rel="noopener">GAIK: Generative AI Enhanced Knowledge Management</a></h3><span class="funding">European Regional Development Fund, Finland</span><p>Development of a generative AI knowledge management toolkit for businesses.</p></div>
-                    <div class="project-card"><h3><a href="https://www.haaga-helia.fi/en/ai-innovation-hub" target="_blank" rel="noopener">Applied AI for Business and Education Hub</a></h3><span class="funding">EU Commission, Ulysseus Alliance</span><p>Applied research on AI adoption in business and education; Senior Researcher and Steering Committee Member.</p></div>
-                    <div class="project-card"><h3><a href="https://www.haaga-helia.fi/en/rdi-projects/metacog" target="_blank" rel="noopener">METACOG</a></h3><span class="funding">European Union, Erasmus+</span><p>AI literacy program for managing disinformation in European societies.</p></div>
-                    <div class="project-card"><h3><a href="https://www.haaga-helia.fi/en/rdi-projects/alfa-labs" target="_blank" rel="noopener">ALFA Labs</a></h3><span class="funding">European Union, Erasmus+</span><p>Advancing digital education and AI integration in higher education.</p></div>
                 </div>
             </section>
 
@@ -418,19 +444,19 @@
             </section>
             <section class="section two-column">
                 <div>
-                    <div class="section-heading"><h2>Leadership</h2></div>
-                    <div class="compact-list">
-                        <div class="compact-item"><div class="compact-top"><div><h3>Chairman, Artificial Intelligence Department</h3><p class="organization">QUEST University</p></div><div class="date">Aug 2021 - Jul 2022</div></div></div>
-                        <div class="compact-item"><div class="compact-top"><div><h3>Chairman, Computer Systems Engineering Department</h3><p class="organization">QUEST University</p></div><div class="date">Oct 2018 - Oct 2021</div></div></div>
-                        <div class="compact-item"><div class="compact-top"><div><h3>Director, Research & Publications</h3><p class="organization">QUEST University</p></div><div class="date">Feb 2020 - Jul 2022</div></div></div>
-                    </div>
-                </div>
-                <div>
                     <div class="section-heading"><h2>Education</h2></div>
                     <div class="education-stack">
                         <div class="education-card"><h3>Ph.D. in Information Technology</h3><p><a href="https://www.aau.at/en/" target="_blank" rel="noopener">Alpen-Adria University, Klagenfurt, Austria</a> | 2013</p><p>Machine learning, embedded systems, dynamic energy management.</p></div>
                         <div class="education-card"><h3>Master in Information Technology</h3><p><a href="https://www.aau.at/en/" target="_blank" rel="noopener">Alpen-Adria University, Klagenfurt, Austria</a> | 2010</p><p>Machine learning and optimization.</p></div>
                         <div class="education-card"><h3>Bachelor in Computer Systems Engineering</h3><p><a href="https://quest.edu.pk/" target="_blank" rel="noopener">QUEST, Pakistan</a> | 2004</p><p>Programming, database design, and embedded systems.</p></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="section-heading"><h2>Leadership</h2></div>
+                    <div class="compact-list">
+                        <div class="compact-item"><div class="compact-top"><div><h3>Chairman, Artificial Intelligence Department</h3><p class="organization">QUEST University</p></div><div class="date">Aug 2021 - Jul 2022</div></div></div>
+                        <div class="compact-item"><div class="compact-top"><div><h3>Chairman, Computer Systems Engineering Department</h3><p class="organization">QUEST University</p></div><div class="date">Oct 2018 - Oct 2021</div></div></div>
+                        <div class="compact-item"><div class="compact-top"><div><h3>Director, Research & Publications</h3><p class="organization">QUEST University</p></div><div class="date">Feb 2020 - Jul 2022</div></div></div>
                     </div>
                 </div>
             </section>
@@ -470,11 +496,12 @@
                 <div class="section-heading"><h2>Additional Information</h2></div>
                 <div class="info-grid">
                     <div class="info-row"><div class="info-label">Languages</div><div class="info-value">English (Proficient), Urdu (Native), Finnish (Basic), German (Beginner)</div></div>
-                    <div class="info-row"><div class="info-label">Scientific Activity</div><div class="info-value">Master's and Ph.D. thesis supervision, peer review for journals and conferences, technical article writing on AI applications.</div></div>
-                    <div class="info-row"><div class="info-label">Interests</div><div class="info-value">Programming, professional article writing, book reading, behavioral analysis.</div></div>
+                    <div class="info-row"><div class="info-label">Scientific Activity</div><div class="info-value">Master's and Ph.D. thesis supervision, and peer review for journals and conferences.</div></div>
+                    <div class="info-row"><div class="info-label">Technical Writing</div><div class="info-value">Author of hands-on professional articles with shared code on recent AI methods, technologies, and reviews. See my <a href="https://medium.com/@umairali.khan" target="_blank" rel="noopener">Medium articles</a>.</div></div>
+                    <div class="info-row"><div class="info-label">Interests</div><div class="info-value">Programming, technical writing, book reading, behavioral analysis.</div></div>
                 </div>
             </section>
-            <p class="footer-note">Senior AI Researcher & AI Advisor based in Helsinki, Finland.</p>
+            <p class="footer-note">Senior AI Researcher & AI Consultant based in Helsinki, Finland.</p>
         </main>
     </article>
 </body>
