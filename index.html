@@ -220,25 +220,29 @@
         .organization { margin-top: 3px; color: var(--blue); font-size: 0.94rem; }
         ul.clean-list { margin: 12px 0 0; padding-left: 20px; }
         ul.clean-list li { margin: 7px 0; color: #425466; }
-        .compact-list { display: grid; gap: 10px; margin-top: 16px; }
+        .compact-list { display: grid; gap: 8px; margin-top: 14px; }
+        .compact-list.two-col { grid-template-columns: repeat(2, 1fr); }
         .compact-item {
-            padding: 14px 16px;
+            padding: 10px 14px;
             border: 1px solid var(--line);
             border-radius: 8px;
             background: #fbfcfd;
         }
+        .compact-item h3 { font-size: 0.98rem; }
+        .compact-item .organization { margin-top: 2px; font-size: 0.9rem; }
         .project-grid { grid-template-columns: repeat(2, 1fr); }
         .project-card { padding: 18px; border-left: 4px solid var(--green); }
         .project-card:nth-child(2), .project-card:nth-child(4) { border-left-color: var(--teal); }
         .project-card:nth-child(3), .project-card:nth-child(5) { border-left-color: var(--gold); }
         .funding { display: block; margin: 6px 0 8px; color: #6f4e18; font-size: 0.88rem; font-weight: 650; }
         .two-column { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 20px; }
-        .education-stack, .publication-list, .info-grid { display: grid; gap: 12px; }
+        .education-stack, .info-grid { display: grid; gap: 12px; }
+        .publication-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
         .education-card { padding: 16px; border-left: 4px solid var(--teal); }
-        .publication-item { padding: 14px 16px; }
-        .publication-title { color: #2d3f4f; font-size: 0.95rem; }
+        .publication-item { padding: 10px 14px; }
+        .publication-title { color: #2d3f4f; font-size: 0.9rem; line-height: 1.4; }
         .publication-title strong { color: var(--navy); }
-        .publication-venue { margin-top: 5px; }
+        .publication-venue { margin-top: 3px; font-size: 0.86rem; }
         .info-row { display: grid; grid-template-columns: 145px minmax(0, 1fr); gap: 14px; padding: 14px 16px; background: #fbfcfd; }
         .info-label { color: var(--navy); font-weight: 700; }
         .pub-more { margin-top: 14px; font-size: 0.94rem; font-weight: 600; }
@@ -248,7 +252,7 @@
             .hero, .main { padding-left: 26px; padding-right: 26px; }
             .hero { grid-template-columns: 1fr; gap: 24px; }
             .photo-wrap { width: 138px; height: 138px; }
-            .impact-strip, .strength-grid, .expertise-grid, .project-grid, .two-column { grid-template-columns: 1fr; }
+            .impact-strip, .strength-grid, .expertise-grid, .project-grid, .two-column, .publication-list, .compact-list.two-col { grid-template-columns: 1fr; }
             .impact-item { border-right: 0; border-bottom: 1px solid var(--line); }
             .impact-item:last-child { border-bottom: 0; }
         }
@@ -277,7 +281,7 @@
                 <img src="images/photo.png" alt="Portrait of Umair Ali Khan">
             </div>
             <div>
-                <p class="eyebrow">Applied AI, LLMs, AI Agents, Machine Learning, NLP</p>
+                <p class="eyebrow">Applied AI, LLMs, AI Agents, Machine Learning, NLP, Computer Vision</p>
                 <h1>Umair Ali Khan, Ph.D.</h1>
                 <p class="role-line">Senior AI Researcher & AI Advisor</p>
                 <p class="value-prop">Helping organizations turn AI research into production-ready business value through strategy, responsible adoption, proof-of-concepts, and applied research.</p>
@@ -326,7 +330,7 @@
                 <div class="section-heading"><h2>Technical Expertise</h2></div>
                 <div class="expertise-grid">
                     <div>
-                        <div class="expertise-row"><div class="expertise-label">AI/ML</div><div class="expertise-value">Model building, fine-tuning, retraining, deployment, evaluation, testing, and optimization.</div></div>
+                        <div class="expertise-row"><div class="expertise-label">AI/ML</div><div class="expertise-value">Model building, fine-tuning, retraining, deployment, evaluation, testing, and optimization across NLP, image processing, and computer vision.</div></div>
                         <div class="expertise-row"><div class="expertise-label">Generative AI</div><div class="expertise-value">LLMs, RAG, AI agents, MCP, LangChain, LlamaIndex, LangGraph, OpenAI SDK, Claude SDK.</div></div>
                     </div>
                     <div>
@@ -385,7 +389,7 @@
 
             <section class="section">
                 <div class="section-heading"><h2>Professional Experience</h2></div>
-                <div class="compact-list">
+                <div class="compact-list two-col">
                     <div class="compact-item"><div class="compact-top"><div><h3>Professor</h3><p class="organization">QUEST University, Pakistan</p></div><div class="date">Jan 2022 - Aug 2022</div></div></div>
                     <div class="compact-item"><div class="compact-top"><div><h3>Associate Professor</h3><p class="organization">QUEST University, Pakistan</p></div><div class="date">Nov 2015 - Jan 2022</div></div></div>
                     <div class="compact-item"><div class="compact-top"><div><h3>Research Scientist</h3><p class="organization"><a href="https://www.iis.fraunhofer.de/en.html" target="_blank" rel="noopener">Fraunhofer IIS</a>, Germany & MTA SZTAKI, Hungary</p></div><div class="date">Nov 2016 - Sep 2017</div></div></div>
@@ -421,7 +425,7 @@
                     <div class="publication-item"><p class="publication-title"><strong>Khan, U.A.</strong>; et al. (2024). "Exploring Contactless Techniques in Multimodal Emotion Recognition"</p><p class="publication-venue">Multimedia Systems, 30.</p></div>
                     <div class="publication-item"><p class="publication-title"><strong>Khan, U.A.</strong>; et al. (2020). "Movies Tags Prediction & Segmentation Using Deep Learning"</p><p class="publication-venue">IEEE Access, 8(1).</p></div>
                 </div>
-                <p class="pub-more"><a href="https://orcid.org/0000-0002-8560-764X" target="_blank" rel="noopener">View all 50+ publications on ORCID &rarr;</a></p>
+                <p class="pub-more"><a href="https://orcid.org/0000-0002-8560-764X" target="_blank" rel="noopener">View other publications on ORCID &rarr;</a></p>
             </section>
 
             <section class="section">
