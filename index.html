@@ -166,8 +166,31 @@
         }
         .impact-label { display: block; margin-top: 7px; color: var(--muted); font-size: 0.88rem; }
         .section { margin-bottom: 34px; }
+        .ico {
+            width: 1em;
+            height: 1em;
+            flex: none;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
         .section-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-        .section-heading::after { content: ""; height: 1px; flex: 1; background: var(--line); }
+        .section-icon {
+            width: 32px;
+            height: 32px;
+            flex: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            background: var(--navy);
+            color: #ffffff;
+            font-size: 17px;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }        .section-heading::after { content: ""; height: 1px; flex: 1; background: var(--line); }
         h2 {
             margin: 0;
             color: var(--navy);
@@ -206,33 +229,186 @@
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
         }
-        .strength-grid, .expertise-grid, .project-grid { display: grid; gap: 14px; }
-        .strength-grid { grid-template-columns: repeat(2, 1fr); }
-        .strength-card, .project-card, .education-card, .publication-item, .info-row {
+        .project-grid { display: grid; gap: 14px; }
+        .project-card, .education-card, .publication-item, .info-row {
             border: 1px solid var(--line);
             background: #ffffff;
             border-radius: 8px;
         }
-        .strength-card { padding: 16px; border-top: 4px solid var(--teal); }
-        .strength-card:nth-child(2), .strength-card:nth-child(5) { border-top-color: var(--blue); }
-        .strength-card:nth-child(3), .strength-card:nth-child(6) { border-top-color: var(--gold); }
-        .strength-card p, .project-card p, .education-card p, .publication-venue, .info-value {
+        .project-card p, .education-card p, .publication-venue, .info-value {
             color: var(--muted);
             font-size: 0.94rem;
         }
-        .expertise-grid { grid-template-columns: repeat(2, 1fr); }
-        .expertise-card {
-            padding: 16px;
+        .strength-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             border: 1px solid var(--line);
-            background: #ffffff;
             border-radius: 8px;
-            border-top: 4px solid var(--teal);
+            background: #ffffff;
+            overflow: hidden;
         }
-        .expertise-card:nth-child(2) { border-top-color: var(--blue); }
-        .expertise-card:nth-child(3) { border-top-color: var(--gold); }
-        .expertise-card:nth-child(4) { border-top-color: var(--green); }
-        .expertise-card h3 { margin-bottom: 7px; }
-        .expertise-card p { color: var(--muted); font-size: 0.94rem; }
+        .strength-card { --accent: var(--teal); padding: 13px 18px 14px; }
+        .strength-card:nth-child(2) { --accent: var(--blue); }
+        .strength-card:nth-child(3) { --accent: var(--gold); }
+        .strength-card:nth-child(4) { --accent: var(--green); }
+        .strength-card:nth-child(odd) { border-right: 1px solid var(--line); }
+        .strength-card:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+        .strength-card { display: grid; grid-template-columns: 36px minmax(0, 1fr); column-gap: 12px; align-items: start; }
+        .strength-icon {
+            grid-row: span 2;
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+            border-radius: 50%;
+            background: color-mix(in srgb, var(--accent) 12%, #ffffff);
+            color: var(--accent);
+            font-size: 18px;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .strength-card h3 { font-size: 0.98rem; margin-bottom: 3px; }
+        .strength-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.45; }
+        .process {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            margin: 16px 0 6px;
+            padding: 16px 8px 14px;
+            list-style: none;
+            border-radius: 8px;
+            background: #f5f9fa;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .process li { position: relative; padding: 0 8px; text-align: center; }
+        .process li + li::before {
+            content: "";
+            position: absolute;
+            top: 19px;
+            left: calc(-50% + 26px);
+            right: calc(50% + 26px);
+            height: 2px;
+            background: #b7d6d2;
+        }
+        .process li + li::after {
+            content: "";
+            position: absolute;
+            top: 15px;
+            right: calc(50% + 24px);
+            border: 5px solid transparent;
+            border-left: 6px solid #b7d6d2;
+            border-right: 0;
+        }
+        .process-icon {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+            border: 2px solid var(--teal);
+            border-radius: 50%;
+            background: #ffffff;
+            color: var(--teal);
+            font-size: 18px;
+        }
+        .process strong { display: block; color: var(--navy); font-size: 0.92rem; line-height: 1.3; }
+        .process-desc { display: block; margin-top: 2px; color: var(--muted); font-size: 0.8rem; line-height: 1.35; }
+        .timeline { margin: 0; padding: 0; list-style: none; }
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 150px 22px minmax(0, 1fr);
+            grid-template-areas: "date marker body";
+            column-gap: 14px;
+        }
+        .timeline-date {
+            grid-area: date;
+            padding-top: 13px;
+            color: var(--muted);
+            font-size: 0.88rem;
+            text-align: right;
+            white-space: nowrap;
+        }
+        .timeline-marker { grid-area: marker; position: relative; }
+        .timeline-marker::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 10px;
+            width: 2px;
+            background: var(--line);
+        }
+        .timeline-item:first-child .timeline-marker::before { top: 18px; }
+        .timeline-item:last-child .timeline-marker::before { bottom: auto; height: 18px; }
+        .timeline-marker::after {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: 4px;
+            width: 14px;
+            height: 14px;
+            box-sizing: border-box;
+            border: 3px solid var(--blue);
+            border-radius: 50%;
+            background: #ffffff;
+        }
+        .timeline-item.current .timeline-marker::after {
+            border-color: var(--teal);
+            background: var(--teal);
+            box-shadow: 0 0 0 4px rgba(32, 123, 115, 0.18);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .timeline-body { grid-area: body; padding-bottom: 8px; }
+        .timeline-item:last-child .timeline-body { padding-bottom: 0; }
+        .timeline-body .compact-item h3 { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+        .badge {
+            padding: 0 8px;
+            border-radius: 999px;
+            background: rgba(32, 123, 115, 0.12);
+            color: var(--teal);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            line-height: 1.7;
+            text-transform: uppercase;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .expertise-grid {
+            display: grid;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #ffffff;
+            overflow: hidden;
+        }
+        .expertise-row {
+            display: grid;
+            grid-template-columns: 220px minmax(0, 1fr);
+            gap: 16px;
+            align-items: center;
+            padding: 10px 18px;
+        }
+        .expertise-row + .expertise-row { border-top: 1px solid var(--line); }
+        .expertise-row:nth-child(even) { background: #fbfcfd; }
+        .expertise-row h3 { font-size: 0.94rem; color: var(--navy); }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+        .skill-tags li {
+            padding: 2px 10px;
+            border: 1px solid #cfdce8;
+            border-radius: 999px;
+            background: #f1f6fa;
+            color: #2c4a60;
+            font-size: 0.84rem;
+            line-height: 1.6;
+            white-space: nowrap;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
         .role-card {
             padding: 20px 22px;
             border: 1px solid var(--line);
@@ -328,8 +504,19 @@
             .hero { grid-template-columns: 1fr; gap: 24px; }
             .photo-wrap { width: 138px; height: 138px; }
             .impact-strip, .strength-grid, .expertise-grid, .project-grid, .two-column, .publication-list, .compact-list.two-col, .services-grid { grid-template-columns: 1fr; }
-            .impact-item { border-right: 0; border-bottom: 1px solid var(--line); }
-            .impact-item:last-child { border-bottom: 0; }
+            .strength-card:nth-child(odd) { border-right: 0; }
+            .strength-card:not(:last-child) { border-bottom: 1px solid var(--line); }
+            .expertise-row { grid-template-columns: 1fr; gap: 6px; }
+            .timeline-item { grid-template-columns: 22px minmax(0, 1fr); grid-template-areas: "marker date" "marker body"; column-gap: 12px; }
+            .timeline-date { padding-top: 6px; text-align: left; }
+            .timeline-marker::after { top: 7px; }
+            .timeline-item:first-child .timeline-marker::before { top: 14px; }
+        }
+        @media (max-width: 760px) {
+            .process { grid-template-columns: 1fr; gap: 12px; padding: 14px 16px; }
+            .process li { display: grid; grid-template-columns: 40px minmax(0, 1fr); column-gap: 12px; align-items: center; padding: 0; text-align: left; }
+            .process li + li::before, .process li + li::after { display: none; }
+            .process-icon { grid-row: span 2; margin: 0; }
         }
         @media (max-width: 620px) {
             .hero, .main { padding-left: 18px; padding-right: 18px; }
@@ -379,14 +566,8 @@
             </div>
         </header>
         <main class="main">
-            <section class="impact-strip" aria-label="Career highlights">
-                <div class="impact-item"><span class="impact-number">20+ <span class="impact-unit">years</span></span><span class="impact-label">Academic and industry experience across Europe and Asia</span></div>
-                <div class="impact-item"><span class="impact-number">150+ <span class="impact-unit">companies</span></span><span class="impact-label">Helped identify high-value AI use cases, design and implement AI solutions, and de-risk adoption decisions</span></div>
-                <div class="impact-item"><span class="impact-number">10+ <span class="impact-unit">active R&amp;D projects</span></span><span class="impact-label">EU, regional, and international AI initiatives</span></div>
-                <div class="impact-item"><span class="impact-number">50+ <span class="impact-unit">publications</span></span><span class="impact-label">Peer-reviewed research in applied AI, NLP, computer vision, and knowledge systems</span></div>
-            </section>
             <section class="section">
-                <div class="section-heading"><h2>Executive Summary</h2></div>
+                <div class="section-heading"><span class="section-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><h2>Executive Summary</h2></div>
                 <p class="summary">Senior AI researcher and consultant specializing in enterprise AI adoption and solution development. At <a href="https://www.haaga-helia.fi/en" target="_blank" rel="noopener">Haaga-Helia University of Applied Sciences</a>, I lead applied research on large language models, AI agents, workflow automation, and enterprise knowledge systems. Through the <a href="https://www.fairedih.fi/" target="_blank" rel="noopener">Finnish AI Region</a> project, I have advised more than 150 companies on AI readiness, use-case prioritization, strategy, governance, and technical implementation. I combine research expertise with hands-on development of proof-of-concepts, reusable AI components, and validated solutions for real organizational workflows.</p>
                 <p class="services-lead">Core Enterprise AI Services</p>
                 <div class="services-grid">
@@ -400,26 +581,26 @@
             </section>
 
             <section class="section">
-                <div class="section-heading"><h2>Core Areas of Expertise</h2></div>
+                <div class="section-heading"><span class="section-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span><h2>Core Areas of Expertise</h2></div>
                 <div class="strength-grid">
-                    <div class="strength-card"><h3>Enterprise AI Adoption</h3><p>AI readiness, use-case prioritization, business-value assessment, roadmaps, governance, and organizational capability building.</p></div>
-                    <div class="strength-card"><h3>Generative AI and AI Agents</h3><p>LLM applications, RAG systems, agentic workflows, structured extraction, and enterprise knowledge solutions.</p></div>
-                    <div class="strength-card"><h3>Applied AI Solution Development</h3><p>Proof-of-concepts, reusable software components, evaluation pipelines, and MVP-grade AI applications.</p></div>
-                    <div class="strength-card"><h3>Research and Innovation Leadership</h3><p>Applied research, funded R&amp;D projects, industry collaboration, academic publishing, and research supervision.</p></div>
+                    <div class="strength-card"><span class="strength-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m23 6-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg></span><h3>Enterprise AI Adoption</h3><p>AI readiness, use-case prioritization, business-value assessment, roadmaps, governance, and organizational capability building.</p></div>
+                    <div class="strength-card"><span class="strength-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span><h3>Generative AI and AI Agents</h3><p>LLM applications, RAG systems, agentic workflows, structured extraction, and enterprise knowledge solutions.</p></div>
+                    <div class="strength-card"><span class="strength-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg></span><h3>Applied AI Solution Development</h3><p>Proof-of-concepts, reusable software components, evaluation pipelines, and MVP-grade AI applications.</p></div>
+                    <div class="strength-card"><span class="strength-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg></span><h3>Research and Innovation Leadership</h3><p>Applied research, funded R&amp;D projects, industry collaboration, academic publishing, and research supervision.</p></div>
                 </div>
             </section>
 
             <section class="section">
-                <div class="section-heading"><h2>Technical Expertise</h2></div>
+                <div class="section-heading"><span class="section-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></span><h2>Technical Expertise</h2></div>
                 <div class="expertise-grid">
-                    <div class="expertise-card"><h3>Generative AI</h3><p>LLM applications, RAG, AI agents, MCP, multimodal knowledge extraction.</p></div>
-                    <div class="expertise-card"><h3>AI and Machine Learning</h3><p>NLP, computer vision, ML algorithms, evaluation, optimization.</p></div>
-                    <div class="expertise-card"><h3>Frameworks and Platforms</h3><p>PyTorch, TensorFlow, scikit-learn, LangChain, LangGraph, LlamaIndex, OpenAI and Anthropic APIs.</p></div>
-                    <div class="expertise-card"><h3>Development and Deployment</h3><p>Python, FastAPI, React, REST APIs, Docker, cloud deployment, evaluation pipelines.</p></div>
+                    <div class="expertise-row"><h3>Generative AI</h3><ul class="skill-tags"><li>LLM applications</li><li>RAG</li><li>AI agents</li><li>MCP</li><li>Multimodal knowledge extraction</li></ul></div>
+                    <div class="expertise-row"><h3>AI and Machine Learning</h3><ul class="skill-tags"><li>NLP</li><li>Computer vision</li><li>ML algorithms</li><li>Evaluation</li><li>Optimization</li></ul></div>
+                    <div class="expertise-row"><h3>Frameworks and Platforms</h3><ul class="skill-tags"><li>PyTorch</li><li>TensorFlow</li><li>scikit-learn</li><li>LangChain</li><li>LangGraph</li><li>LlamaIndex</li><li>OpenAI API</li><li>Anthropic API</li></ul></div>
+                    <div class="expertise-row"><h3>Development and Deployment</h3><ul class="skill-tags"><li>Python</li><li>FastAPI</li><li>React</li><li>REST APIs</li><li>Docker</li><li>Cloud deployment</li><li>Evaluation pipelines</li></ul></div>
                 </div>
             </section>
             <section class="section">
-                <div class="section-heading"><h2>AI Consultancy & Industry Impact</h2></div>
+                <div class="section-heading"><span class="section-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span><h2>AI Consultancy & Industry Impact</h2></div>
                 <div class="role-card advisory">
                     <div class="role-top">
                         <div>
@@ -428,6 +609,13 @@
                         </div>
                         <div class="role-meta">Aug 2022 - Present | Helsinki, Finland</div>
                     </div>
+                    <ol class="process" aria-label="AI consultancy engagement process">
+                        <li><span class="process-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span><strong>Assess</strong><span class="process-desc">AI readiness, maturity, and data</span></li>
+                        <li><span class="process-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></span><strong>Prioritize</strong><span class="process-desc">Use cases and business value</span></li>
+                        <li><span class="process-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4z"/><path d="M8 2v16M16 6v16"/></svg></span><strong>Roadmap</strong><span class="process-desc">Strategy, technology, and governance</span></li>
+                        <li><span class="process-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></span><strong>Prototype</strong><span class="process-desc">Proof-of-concepts and MVPs</span></li>
+                        <li><span class="process-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></span><strong>Validate</strong><span class="process-desc">Feasibility and investment decisions</span></li>
+                    </ol>
                     <ul class="clean-list">
                         <li>Advised more than 150 companies on AI use-case selection and prioritization, business-value assessment, implementation planning, technical development, and adoption risks.</li>
                         <li>Conducted AI needs and maturity assessments that helped companies prioritize feasible use cases, identify data and capability gaps, and define concrete implementation steps.</li>
@@ -439,7 +627,7 @@
             </section>
 
             <section class="section">
-                <div class="section-heading"><h2>Research & Projects</h2></div>
+                <div class="section-heading"><span class="section-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6"/><path d="M10 3v6l-5.5 9.5A2 2 0 0 0 6.2 21.5h11.6a2 2 0 0 0 1.7-3L14 9V3"/><path d="M7 15h10"/></svg></span><h2>Research & Projects</h2></div>
                 <div class="role-card research">
                     <div class="role-top">
                         <div>
@@ -476,17 +664,18 @@
             </section>
 
             <section class="section">
-                <div class="section-heading"><h2>Professional Experience</h2></div>
-                <div class="compact-list two-col">
-                    <div class="compact-item"><div class="compact-top"><div><h3>Professor</h3><p class="organization">QUEST University, Pakistan</p></div><div class="date">Jan 2022 - Aug 2022</div></div></div>
-                    <div class="compact-item"><div class="compact-top"><div><h3>Associate Professor</h3><p class="organization">QUEST University, Pakistan</p></div><div class="date">Nov 2015 - Jan 2022</div></div></div>
-                    <div class="compact-item"><div class="compact-top"><div><h3>Research Scientist</h3><p class="organization"><a href="https://www.iis.fraunhofer.de/en.html" target="_blank" rel="noopener">Fraunhofer IIS</a>, Germany & MTA SZTAKI, Hungary</p></div><div class="date">Nov 2016 - Sep 2017</div></div></div>
-                    <div class="compact-item"><div class="compact-top"><div><h3>Assistant Professor / Lecturer</h3><p class="organization">QUEST University, Pakistan</p></div><div class="date">Jan 2005 - Nov 2015</div></div></div>
-                </div>
+                <div class="section-heading"><span class="section-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><h2>Professional Experience</h2></div>
+                <ol class="timeline">
+                    <li class="timeline-item current"><div class="timeline-date">Aug 2022 - Present</div><div class="timeline-marker"></div><div class="timeline-body"><div class="compact-item"><h3>Senior AI Researcher &amp; AI Consultant <span class="badge">Current</span></h3><p class="organization">Haaga-Helia University of Applied Sciences, Finland</p></div></div></li>
+                    <li class="timeline-item"><div class="timeline-date">Jan 2022 - Aug 2022</div><div class="timeline-marker"></div><div class="timeline-body"><div class="compact-item"><h3>Professor</h3><p class="organization">QUEST University, Pakistan</p></div></div></li>
+                    <li class="timeline-item"><div class="timeline-date">Nov 2016 - Sep 2017</div><div class="timeline-marker"></div><div class="timeline-body"><div class="compact-item"><h3>Research Scientist</h3><p class="organization"><a href="https://www.iis.fraunhofer.de/en.html" target="_blank" rel="noopener">Fraunhofer IIS</a>, Germany & MTA SZTAKI, Hungary</p></div></div></li>
+                    <li class="timeline-item"><div class="timeline-date">Nov 2015 - Jan 2022</div><div class="timeline-marker"></div><div class="timeline-body"><div class="compact-item"><h3>Associate Professor</h3><p class="organization">QUEST University, Pakistan</p></div></div></li>
+                    <li class="timeline-item"><div class="timeline-date">Jan 2005 - Nov 2015</div><div class="timeline-marker"></div><div class="timeline-body"><div class="compact-item"><h3>Assistant Professor / Lecturer</h3><p class="organization">QUEST University, Pakistan</p></div></div></li>
+                </ol>
             </section>
             <section class="section two-column">
                 <div>
-                    <div class="section-heading"><h2>Education</h2></div>
+                    <div class="section-heading"><span class="section-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.5 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg></span><h2>Education</h2></div>
                     <div class="education-stack">
                         <div class="education-card"><h3>Ph.D. in Information Technology</h3><p><a href="https://www.aau.at/en/" target="_blank" rel="noopener">Alpen-Adria University, Klagenfurt, Austria</a> | 2013</p><p>Research focus: machine learning-based dynamic energy management for embedded and networked systems.</p></div>
                         <div class="education-card"><h3>Master's Degree in Information Technology</h3><p><a href="https://www.aau.at/en/" target="_blank" rel="noopener">Alpen-Adria University, Klagenfurt, Austria</a> | 2010</p><p>Machine learning and optimization.</p></div>
@@ -494,7 +683,7 @@
                     </div>
                 </div>
                 <div>
-                    <div class="section-heading"><h2>Leadership</h2></div>
+                    <div class="section-heading"><span class="section-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><h2>Leadership</h2></div>
                     <div class="compact-list">
                         <div class="compact-item"><div class="compact-top"><div><h3>Chairman, Artificial Intelligence Department</h3><p class="organization">QUEST University</p></div><div class="date">Aug 2021 - Jul 2022</div></div></div>
                         <div class="compact-item"><div class="compact-top"><div><h3>Chairman, Computer Systems Engineering Department</h3><p class="organization">QUEST University</p></div><div class="date">Oct 2018 - Oct 2021</div></div></div>
@@ -504,7 +693,7 @@
             </section>
 
             <section class="section">
-                <div class="section-heading"><h2>Award &amp; Recognition</h2></div>
+                <div class="section-heading"><span class="section-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="7"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg></span><h2>Award &amp; Recognition</h2></div>
                 <div class="education-card">
                     <h3><a href="https://www.haaga-helia.fi/en/current/news/umair-ali-khan-receives-proict-award-work-artificial-intelligence" target="_blank" rel="noopener">ProICT Award</a></h3>
                     <p><a href="http://www.atkinstituutti.fi/proict-2020-palkinnot-jaettu/" target="_blank" rel="noopener">ATK-instituutti säätiö, Finland</a> | 2025</p>
@@ -513,8 +702,16 @@
             </section>
 
             <section class="section">
-                <div class="section-heading"><h2>Selected Publications</h2></div>
+                <div class="section-heading"><span class="section-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><h2>Selected Publications</h2></div>
                 <div class="publication-list">
+                    <div class="publication-item">
+                        <p class="publication-title">Kauttonen, J.; <strong>Khan, U.A.</strong>; Kudryavtsev, D. (2026). CURACT: A Curation-Anchored Framework for Generative-AI Report Writing in Knowledge-Intensive Expert Work.</p>
+                        <p class="publication-venue">Proceedings of the 18th International Joint Conference on Knowledge Discovery, Knowledge Engineering and Knowledge Management (IC3K 2026), Volume 2, pp. 905-914. <span class="doi">ISSN: 2184-3228</span></p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="publication-title">Kudryavtsev, D.; Kantosalo, A.; <strong>Khan, U.A.</strong>; Leskinen, A. (2026). Towards LLM-Powered AI Help Desks for EDIHs: A Service-Orchestration and Knowledge-Access Artefact for Networked Organisations.</p>
+                        <p class="publication-venue">Proceedings of the 18th International Joint Conference on Knowledge Discovery, Knowledge Engineering and Knowledge Management (IC3K 2026), Volume 2, pp. 1006-1015. <span class="doi">ISSN: 2184-3228</span></p>
+                    </div>
                     <div class="publication-item">
                         <p class="publication-title">Kudryavtsev, D.; <strong>Khan, U.A.</strong>; Remes, J.; Kauttonen, J. (2026). <a href="https://link.springer.com/chapter/10.1007/978-3-032-28570-6_23" target="_blank" rel="noopener">From Collaboration to Toolkit: Applying eDSR in a Generative AI Knowledge Management Project</a>.</p>
                         <p class="publication-venue">Design Science Research (DESRIST 2026), Lecture Notes in Computer Science, Springer. <span class="doi">DOI: 10.1007/978-3-032-28570-6_23</span></p>
@@ -544,7 +741,7 @@
             </section>
 
             <section class="section">
-                <div class="section-heading"><h2>Additional Information</h2></div>
+                <div class="section-heading"><span class="section-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></span><h2>Additional Information</h2></div>
                 <div class="info-grid">
                     <div class="info-row"><div class="info-label">Languages</div><div class="info-value">English (Proficient), Urdu (Native), Finnish (Basic), German (Beginner)</div></div>
                     <div class="info-row"><div class="info-label">Academic Service</div><div class="info-value">Supervision of master's and doctoral research; peer reviewer for international journals and conferences.</div></div>
