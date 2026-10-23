@@ -1,1 +1,0 @@
-[      43ms] [ERROR] Failed to find a valid digest in the 'integrity' attribute for resource 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' with computed SHA-512 integrity 'iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=='. The resource has been blocked. @ https://quest.edu.pk/:0
